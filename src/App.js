@@ -158,12 +158,13 @@ export const FilmsPage = ({
         movies={nowPlaying}
         header="Now Playing"
       />
-      <CategoryPreview
-        modalHandler={modalHandler}
-        movies={upcoming}
-        header="Upcoming"
-      />
-
+      {upcomingTag !== "" && (
+        <CategoryPreview
+          modalHandler={modalHandler}
+          movies={upcoming}
+          header="Upcoming"
+        />
+      )}
       <Footer />
     </div>
   );
@@ -193,7 +194,7 @@ function App() {
               popularTag="tv/popular"
               topRatedTag="tv/top_rated"
               nowPlayingTag="tv/on_the_air"
-              upcomingTag="tv/airing_today"
+              upcomingTag=""
             />
           }
         />
